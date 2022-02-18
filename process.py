@@ -10,3 +10,20 @@ def sales_reports(log_file): # declares a funcntion
 
 
 sales_reports(log_file) # invocation of the function
+
+
+def over_ten(log_file):
+    for line in log_file:
+        line = line.rstrip()
+        find = line[16:len(line)]
+        # print(find)
+        quantity = find.split(' ')
+        # print(quantity[0])
+        if int(quantity[0]) > 10:
+            print(line)
+            
+
+log_file.seek(0,0)
+over_ten(log_file)
+
+log_file.close()
